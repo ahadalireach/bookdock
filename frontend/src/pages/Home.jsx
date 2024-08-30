@@ -16,8 +16,8 @@ const Home = () => {
     setIsLoading(true);
     try {
       const url = searchText
-        ? `http://localhost:4000/books/${filteredType}/${searchText}`
-        : "http://localhost:4000/";
+        ? `https://bookdock.vercel.app/api/books/${filteredType}/${searchText}`
+        : "https://bookdock.vercel.app/api/";
       const res = await axios.get(url);
       console.log("API Response:", res.data);
       setBooks(res.data.data || []);
