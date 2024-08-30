@@ -20,7 +20,6 @@ export const postBook = async (req, res, next) => {
     const book = await newBook.save();
     res.status(201).json(book);
   } catch (error) {
-    console.log(error.message);
     res.status(500).json({ error: error.message });
   }
 };
@@ -31,7 +30,6 @@ export const getAllBooks = async (req, res) => {
     const books = await Book.find({});
     res.status(200).json({ count: books.length, data: books });
   } catch (error) {
-    console.log(error.message);
     res.status(404).json({ error: error.message });
   }
 };
@@ -77,7 +75,6 @@ export const getBook = async (req, res) => {
     if (!book) return res.status(404).json({ message: "Book not found." });
     res.status(200).json(book);
   } catch (error) {
-    console.log(error.message);
     res.status(404).json({ error: error.message });
   }
 };
@@ -124,7 +121,6 @@ export const deleteBook = async (req, res) => {
       return res.status(404).json({ message: "Book not found." });
     res.status(200).json({ message: "Book deleted successfully." });
   } catch (error) {
-    console.log(error.message);
     res.status(500).json({ error: error.message });
   }
 };

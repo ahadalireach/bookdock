@@ -19,7 +19,6 @@ const Home = () => {
         ? `https://bookdock.vercel.app/api/books/${filteredType}/${searchText}`
         : "https://bookdock.vercel.app/api/";
       const res = await axios.get(url);
-      console.log("API Response:", res.data);
       setBooks(res.data.data || []);
     } catch (error) {
       console.error("Error fetching books:", error);
