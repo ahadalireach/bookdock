@@ -15,7 +15,11 @@ app.use(express.json());
 
 app.use(cors());
 
-app.use("/", bookRouter);
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
+app.use("/api", bookRouter);
 
 app.listen(PORT, () => {
   console.log(
