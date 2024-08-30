@@ -14,7 +14,9 @@ const BookInfo = () => {
     const fetchBook = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`https://bookdock.vercel.app/api/book/${id}`);
+        const response = await axios.get(
+          `https://bookdock-web.vercel.app/api/book/${id}`
+        );
         setBook(response.data);
       } catch (error) {
         console.error("Failed to fetch book data:", error);

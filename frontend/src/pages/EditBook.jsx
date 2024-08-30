@@ -46,7 +46,7 @@ const EditBook = () => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `https://bookdock.vercel.app/api/book/${id}`
+        `https://bookdock-web.vercel.app/api/book/${id}`
       );
       setBookData(response.data);
     } catch (error) {
@@ -76,7 +76,10 @@ const EditBook = () => {
 
     setIsLoading(true);
     try {
-      await axios.put(`https://bookdock.vercel.app/api/book/${id}`, bookData);
+      await axios.put(
+        `https://bookdock-web.vercel.app/api/book/${id}`,
+        bookData
+      );
       toast.success("Book updated successfully!");
       navigate("/");
     } catch (error) {

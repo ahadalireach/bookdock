@@ -12,17 +12,13 @@ const PORT = process.env.PORT || 4000;
 connectDB();
 const app = express();
 
-
 const corsOptions = {
-  origin: [
-    'https://bookdock-web.vercel.app' 
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  origin: ["https://bookdock.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
-
 app.use(express.json());
 
 app.get("/", (req, res) => {

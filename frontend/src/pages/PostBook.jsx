@@ -49,7 +49,7 @@ const PostBook = () => {
 
     setIsLoading(true);
     try {
-      await axios.post("https://bookdock.vercel.app/api/", bookData);
+      await axios.post("https://bookdock-web.vercel.app/api/", bookData);
       toast.success("Book Posted Successfully!");
       navigate("/");
     } catch (error) {

@@ -13,7 +13,7 @@ const DeleteBook = () => {
   const deleteBook = async () => {
     setIsLoading(true);
     try {
-      await axios.delete(`https://bookdock.vercel.app/api/book/${id}`);
+      await axios.delete(`https://bookdock-web.vercel.app/api/book/${id}`);
       toast.success("Book deleted successfully!");
       navigate("/");
     } catch (error) {
