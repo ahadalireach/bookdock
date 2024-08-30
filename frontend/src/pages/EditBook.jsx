@@ -45,11 +45,14 @@ const EditBook = () => {
   const getBookData = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`https://bookdock.vercel.app/api/book/${id}`);
+      const response = await axios.get(
+        `https://bookdock.vercel.app/api/book/${id}`
+      );
       setBookData(response.data);
     } catch (error) {
       console.error("Failed to fetch book data:", error);
       toast.error("Failed to fetch book data. Please try again later.");
+      navigate("/");
     } finally {
       setIsLoading(false);
     }
@@ -73,7 +76,7 @@ const EditBook = () => {
 
     setIsLoading(true);
     try {
-      await axios.put(`http://localhost:4000/book/${id}`, bookData);
+      await axios.put(`https://bookdock.vercel.app/api/book/${id}`, bookData);
       toast.success("Book updated successfully!");
       navigate("/");
     } catch (error) {
@@ -152,7 +155,7 @@ const EditBook = () => {
               )}
             </div>
             <button
-              className="w-full py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg mt-6  transition-colors disabled:opacity-50"
+              className="w-full py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg mt-6 transition-colors disabled:opacity-50"
               onClick={postUpdatedBook}
               disabled={isLoading}
             >

@@ -95,17 +95,23 @@ export const updateBook = async (req, res) => {
         .json({ message: "Title, author, and published year are required." });
     }
 
-    const updateBook = await Book.findByIdAndUpdate(id, {
-      title,
-      author,
-      publishedYear,
-    });
+    const updateBook = await Book.findByIdAndUpdate(
+      id,
+      {
+        title,
+        author,
+        publishedYear,
+      },
+      { new: true }
+    );
+
     if (!updateBook)
       return res.status(404).json({ message: "Book not found." });
+
     res.status(200).json(updateBook);
   } catch (error) {
-    console.log(error.message);
-    res.status(404).json({ error: error.message });
+    console.error(error.message);
+    res.status(500).json({ error: error.message });
   }
 };
 
