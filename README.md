@@ -69,6 +69,14 @@
       cd backend
       ```
 
+    - Create a `.env` file in the backend directory and add the following environment variables:
+
+      ```env
+      PORT=5000
+      MONGO_URI=your_mongodb_connection_string
+      JWT_SECRET=your_jwt_secret_key
+      ```
+
     - Install the dependencies:
 
       ```bash
@@ -78,7 +86,7 @@
     - Start the server:
 
       ```bash
-      npm start
+      npm run dev
       ```
 
 4. **Update API URLs**
