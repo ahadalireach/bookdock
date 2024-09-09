@@ -101,7 +101,7 @@
 
 - Live Web: [bookdock-web.vercel.app](https://bookdock-web.vercel.app)
 - GitHub Repo: Give it a Star!
-- Live Video Demo: Coming Soon
+- Live Video Demo: [Link](https://youtu.be/bGsOCxYh-Yg?si=CxbdREUj6p-0qthf)
 
 **Contact**
 
